@@ -15,12 +15,19 @@ mkdir -p "$HOME/Documents/YouTube WAV"
 
 SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
 cp "$SCRIPT_DIR/ytwav.py" "$HOME/bin/ytwav.py"
+cp "$SCRIPT_DIR/web_ui.py" "$HOME/bin/web_ui.py"
 
 cat > "$HOME/bin/ytwav" <<'SH'
 #!/bin/sh
 python3 "$HOME/bin/ytwav.py" "$@"
 SH
 chmod +x "$HOME/bin/ytwav" "$HOME/bin/ytwav.py"
+
+cat > "$HOME/bin/ytwav-web" <<'SH'
+#!/bin/sh
+python3 "$HOME/bin/web_ui.py"
+SH
+chmod +x "$HOME/bin/ytwav-web" "$HOME/bin/web_ui.py"
 
 PROFILE="$HOME/.profile"
 touch "$PROFILE"
@@ -35,3 +42,7 @@ echo '  export PATH="$HOME/bin:$PATH"'
 echo ""
 echo "Usage:"
 echo '  ytwav "https://www.youtube.com/watch?v=..."'
+echo ""
+echo "Web UI:"
+echo "  ytwav-web"
+echo "  then open Safari: http://127.0.0.1:8765"

@@ -25,7 +25,23 @@ chmod +x install_ish.sh
 - nodejs
 - yt-dlp
 
-## 使用方式
+## App 介面使用方式
+
+在 iSH 執行：
+
+```sh
+ytwav-web
+```
+
+然後打開 iPhone Safari：
+
+```text
+http://127.0.0.1:8765
+```
+
+你會看到簡單介面，只需要貼 YouTube 網址並按「轉成 WAV」。轉檔時要保持 iSH 開著。
+
+## Terminal 使用方式
 
 執行：
 
